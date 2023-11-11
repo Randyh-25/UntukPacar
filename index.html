@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yes or No Question</title>
+    <title>Love</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+
+            background-image: url('https://raw.githubusercontent.com/Randyh-25/UntukPacar/main/Gambar/8093eb596b38846d47cf30feb907d68f.gif');
+            background-size: 300%;
+            background-position: center;
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 50px;
         }
 
         h1 {
-            color: #333;
+            color: #ffffff; /* Ganti warna teks sesuai keinginan Anda */
             margin-bottom: 20px;
         }
 
@@ -25,12 +32,16 @@
         }
 
         button {
-            padding: 15px;
+            padding: 15px 40px;
             margin: 10px;
             font-size: 16px;
             cursor: pointer;
             transition: transform 0.3s ease-in-out;
-            position: relative; /* Set position to relative */
+            position: relative;
+            background: url('https://raw.githubusercontent.com/Randyh-25/UntukPacar/main/Gambar/R.png') no-repeat center center; /* Ganti 'path/to/your/image.jpg' dengan path ke gambar Anda */
+            background-size: cover;
+            color: #ffffff; /* Ganti warna teks sesuai keinginan Anda */
+            border: none; /* Hilangkan border */
         }
 
         button:hover {
@@ -48,18 +59,22 @@
 </head>
 <body>
 
-    <h1>Answer the Question</h1>
+    <h1><b>Apakah Anda Cinta dengan Randy???</b></h1>
 
     <form action="submit.php" method="post" id="answerForm">
-        <button type="submit" name="answer" value="yes" id="yesButton">Yes</button>
-        <button type="button" id="noButton" onmouseover="moveNoButton()">No</button>
+        <button type="submit" name="answer" value="yes" id="yesButton">IYAA</button>
+        <button type="button" id="noButton" onmouseover="moveNoButton()">GA!!</button>
     </form>
 
     <script>
         function moveNoButton() {
             var noButton = document.getElementById('noButton');
-            var newX = Math.floor(Math.random() * (window.innerWidth - noButton.clientWidth));
-            var newY = Math.floor(Math.random() * (window.innerHeight - noButton.clientHeight));
+            var maxX = window.innerWidth - noButton.clientWidth;
+            var maxY = window.innerHeight - noButton.clientHeight;
+
+            var newX = Math.floor(Math.random() * maxX);
+            var newY = Math.floor(Math.random() * maxY);
+            
             noButton.style.left = newX + 'px';
             noButton.style.top = newY + 'px';
         }
