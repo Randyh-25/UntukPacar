@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes or No Question</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
 
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 15px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            position: relative; /* Set position to relative */
+        }
+
+        button:hover {
+            transform: translateY(-5px);
+        }
+
+        #yesButton {
+            margin-right: 20px;
+        }
+
+        #noButton {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Answer the Question</h1>
+
+    <form action="submit.php" method="post" id="answerForm">
+        <button type="submit" name="answer" value="yes" id="yesButton">Yes</button>
+        <button type="button" id="noButton" onmouseover="moveNoButton()">No</button>
+    </form>
+
+    <script>
+        function moveNoButton() {
+            var noButton = document.getElementById('noButton');
+            var newX = Math.floor(Math.random() * (window.innerWidth - noButton.clientWidth));
+            var newY = Math.floor(Math.random() * (window.innerHeight - noButton.clientHeight));
+            noButton.style.left = newX + 'px';
+            noButton.style.top = newY + 'px';
+        }
+    </script>
+
+</body>
+</html>
