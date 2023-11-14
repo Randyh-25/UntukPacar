@@ -77,23 +77,19 @@
         var maxX = window.innerWidth - noButton.clientWidth;
         var maxY = window.innerHeight - noButton.clientHeight;
 
-        // Mendapatkan posisi tombol saat ini
-        var currentX = parseInt(noButton.style.left) || 0;
-        var currentY = parseInt(noButton.style.top) || 0;
-
-        // Menghasilkan pergeseran acak
-        var deltaX = Math.floor(Math.random() * maxX) - currentX;
-        var deltaY = Math.floor(Math.random() * maxY) - currentY;
-
-        // Menghitung posisi baru
-        var newX = Math.min(Math.max(currentX + deltaX, 0), maxX);
-        var newY = Math.min(Math.max(currentY + deltaY, 0), maxY);
+        // Menghasilkan posisi acak
+        var newX = Math.floor(Math.random() * maxX);
+        var newY = Math.floor(Math.random() * maxY);
 
         // Menetapkan posisi baru pada tombol
+        noButton.style.position = 'absolute';  // Menetapkan posisi mutlak
         noButton.style.left = newX + 'px';
         noButton.style.top = newY + 'px';
     }
-</script>
+    </script>
+
+
+
 
 
 </body>
