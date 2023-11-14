@@ -66,31 +66,29 @@
 
     <h1><b>Apakah Anda Cinta dengan Randy???</b></h1>
 
-    <form action="submit.php" method="post" id="answerForm">
-        <button type="submit" name="answer" value="yes" id="yesButton">IYAA</button>
+    <form action="#" method="post" id="answerForm">
+        <button type="button" id="yesButton" onclick="redirectToNewPage()">IYAA</button>
         <button type="button" id="noButton" onmouseover="moveNoButton()">GA!!</button>
     </form>
 
     <script>
-    function moveNoButton() {
-        var noButton = document.getElementById('noButton');
-        var maxX = window.innerWidth - noButton.clientWidth;
-        var maxY = window.innerHeight - noButton.clientHeight;
+        function moveNoButton() {
+            var noButton = document.getElementById('noButton');
+            var maxX = window.innerWidth - noButton.clientWidth;
+            var maxY = window.innerHeight - noButton.clientHeight;
 
-        // Menghasilkan posisi acak
-        var newX = Math.floor(Math.random() * maxX);
-        var newY = Math.floor(Math.random() * maxY);
+            var newX = Math.floor(Math.random() * maxX);
+            var newY = Math.floor(Math.random() * maxY);
 
-        // Menetapkan posisi baru pada tombol
-        noButton.style.position = 'absolute';  // Menetapkan posisi mutlak
-        noButton.style.left = newX + 'px';
-        noButton.style.top = newY + 'px';
-    }
+            noButton.style.position = 'absolute';
+            noButton.style.left = newX + 'px';
+            noButton.style.top = newY + 'px';
+        }
+
+        function redirectToNewPage() {
+            // Change this URL to the desired destination
+            window.location.href = 'https://randyh-25.github.io/UntukPacar/Page/Page2.html';
+        }
     </script>
-
-
-
-
-
 </body>
 </html>
