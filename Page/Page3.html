@@ -27,39 +27,10 @@
             margin-bottom: 20px;
         }
 
-        form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+        iframe {
             margin-top: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        label {
-            margin-bottom: 10px;
-        }
-
-        textarea {
-            padding: 10px;
-            width: 300px;
-            height: 150px;
-            box-sizing: border-box;
-            resize: vertical;
-        }
-
-        button {
-            padding: 15px 40px;
-            margin-top: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
-            position: relative;
-            background: url('https://raw.githubusercontent.com/Randyh-25/UntukPacar/main/Gambar/R.png') no-repeat center center;
-            background-size: cover;
-            color: #ffffff;
+            width: 400px;
+            height: 500px;
             border: none;
         }
     </style>
@@ -68,52 +39,8 @@
 
     <h1><b>Kenapa Suka Sama Randy?</b></h1>
 
-    <form onsubmit="submitForm(event)">
-        <label for="answer">Jawaban Anda:</label>
-        <textarea id="answer" name="answer" required></textarea>
-        <button type="submit">Submit</button>
-    </form>
-
-    <script>
-        function submitForm(event) {
-            event.preventDefault();
-
-            var answer = document.getElementById('answer').value;
-
-            // URL endpoint untuk membuat atau memperbarui Gist
-            var gistEndpoint = 'https://api.github.com/gists/e52cb26fd73ba4ffaee70c8d619a301f';
-
-            // Token akses GitHub Anda
-            var accessToken = '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';
-
-            // Buat objek payload untuk dikirimkan ke Gist
-            var gistPayload = {
-                description: 'Form Submission',
-                public: true,
-                files: {
-                    'user_answer.txt': {
-                        content: answer,
-                    },
-                },
-            };
-
-            // Kirim permintaan POST ke GitHub API menggunakan Fetch
-            fetch(gistEndpoint, {
-                method: 'POST', // Menggunakan metode POST untuk membuat atau memperbarui Gist
-                headers: {
-                    'Authorization': 'Bearer ' + accessToken,
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(gistPayload),
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Gist updated:', data);
-                // Anda dapat menambahkan logika atau pesan ke pengguna di sini jika diperlukan
-            })
-            .catch(error => console.error('Error updating Gist:', error));
-        }
-    </script>
+    <!-- Menampilkan web kecil -->
+    <iframe src="https://ngl.link/randy.25" frameborder="0" allowfullscreen></iframe>
 
 </body>
 </html>
