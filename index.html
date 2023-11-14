@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Love</title>
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 50px;
+            margin: 0;
 
             background-image: url('https://raw.githubusercontent.com/Randyh-25/UntukPacar/main/Gambar/8093eb596b38846d47cf30feb907d68f.gif');
-            background-size: 300%;
+            background-size: cover;
             background-position: center;
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 50px;
         }
 
         h1 {
-            color: #ffffff; /* Ganti warna teks sesuai keinginan Anda */
+            color: #ffffff;
             margin-bottom: 20px;
         }
 
@@ -38,10 +43,10 @@
             cursor: pointer;
             transition: transform 0.3s ease-in-out;
             position: relative;
-            background: url('https://raw.githubusercontent.com/Randyh-25/UntukPacar/main/Gambar/R.png') no-repeat center center; /* Ganti 'path/to/your/image.jpg' dengan path ke gambar Anda */
+            background: url('https://raw.githubusercontent.com/Randyh-25/UntukPacar/main/Gambar/R.png') no-repeat center center;
             background-size: cover;
-            color: #ffffff; /* Ganti warna teks sesuai keinginan Anda */
-            border: none; /* Hilangkan border */
+            color: #ffffff;
+            border: none;
         }
 
         button:hover {
@@ -67,18 +72,29 @@
     </form>
 
     <script>
-        function moveNoButton() {
-            var noButton = document.getElementById('noButton');
-            var maxX = window.innerWidth - noButton.clientWidth;
-            var maxY = window.innerHeight - noButton.clientHeight;
+    function moveNoButton() {
+        var noButton = document.getElementById('noButton');
+        var maxX = window.innerWidth - noButton.clientWidth;
+        var maxY = window.innerHeight - noButton.clientHeight;
 
-            var newX = Math.floor(Math.random() * maxX);
-            var newY = Math.floor(Math.random() * maxY);
-            
-            noButton.style.left = newX + 'px';
-            noButton.style.top = newY + 'px';
-        }
-    </script>
+        // Mendapatkan posisi tombol saat ini
+        var currentX = parseInt(noButton.style.left) || 0;
+        var currentY = parseInt(noButton.style.top) || 0;
+
+        // Menghasilkan pergeseran acak
+        var deltaX = Math.floor(Math.random() * maxX) - currentX;
+        var deltaY = Math.floor(Math.random() * maxY) - currentY;
+
+        // Menghitung posisi baru
+        var newX = Math.min(Math.max(currentX + deltaX, 0), maxX);
+        var newY = Math.min(Math.max(currentY + deltaY, 0), maxY);
+
+        // Menetapkan posisi baru pada tombol
+        noButton.style.left = newX + 'px';
+        noButton.style.top = newY + 'px';
+    }
+</script>
+
 
 </body>
 </html>
