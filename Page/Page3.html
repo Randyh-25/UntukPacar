@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            background-image: url('https://i.pinimg.com/originals/e7/2c/d1/e72cd1b3049474f7a2f496505a6773d2.gif');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            padding: 10px;
+            width: 300px;
+            height: 150px; /* Set the height to allow multiline input */
+            box-sizing: border-box;
+            resize: vertical; /* Allow vertical resizing of the textarea */
+        }
+
+        button {
+            padding: 15px 40px;
+            margin-top: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+            background: url('https://raw.githubusercontent.com/Randyh-25/UntukPacar/main/Gambar/R.png') no-repeat center center;
+            background-size: cover;
+            color: #ffffff;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1><b>Kenapa Suka Sama Randy?</b></h1>
+
+    <form onsubmit="submitForm(event)">
+        <label for="answer">Jawaban Anda:</label>
+        <textarea id="answer" name="answer" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            var answer = document.getElementById('answer').value;
+
+            // Send the answer to the console for demonstration purposes
+            console.log('User Answer:', answer);
+
+            // You would typically send the answer to the server using AJAX and then handle the email sending on the server side
+            // This example only shows how to get the user's input in the browser
+        }
+    </script>
+</body>
+</html>
