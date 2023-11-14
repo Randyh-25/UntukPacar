@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+
+            background-image: url('https://raw.githubusercontent.com/Randyh-25/UntukPacar/main/Gambar/8093eb596b38846d47cf30feb907d68f.gif');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 15px 40px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+            background: url('https://raw.githubusercontent.com/Randyh-25/UntukPacar/main/Gambar/R.png') no-repeat center center;
+            background-size: cover;
+            color: #ffffff;
+            border: none;
+        }
+
+        button:hover {
+            transform: translateY(-5px);
+        }
+
+        #yesButton {
+            margin-right: 20px;
+        }
+
+        #noButton {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1><b>Apakah Anda Cinta dengan Randy???</b></h1>
+
+    <form action="submit.php" method="post" id="answerForm">
+        <button type="submit" name="answer" value="yes" id="yesButton">IYAA</button>
+        <button type="button" id="noButton" onmouseover="moveNoButton()">GA!!</button>
+    </form>
+
+    <script>
+    function moveNoButton() {
+        var noButton = document.getElementById('noButton');
+        var maxX = window.innerWidth - noButton.clientWidth;
+        var maxY = window.innerHeight - noButton.clientHeight;
+
+        // Menghasilkan posisi acak
+        var newX = Math.floor(Math.random() * maxX);
+        var newY = Math.floor(Math.random() * maxY);
+
+        // Menetapkan posisi baru pada tombol
+        noButton.style.position = 'absolute';  // Menetapkan posisi mutlak
+        noButton.style.left = newX + 'px';
+        noButton.style.top = newY + 'px';
+    }
+    </script>
+
+
+
+
+
+</body>
+</html>
